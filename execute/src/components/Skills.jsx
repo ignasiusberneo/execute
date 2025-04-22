@@ -1,5 +1,13 @@
-import { Container, Typography, Box, LinearProgress } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Box,
+  LinearProgress,
+  Grid,
+} from "@mui/material";
 import { motion } from "framer-motion";
+import CircleIcon from "@mui/icons-material/Circle";
+import skillList from "../assets/skillList";
 
 function Skills() {
   return (
@@ -13,14 +21,24 @@ function Skills() {
         <Typography variant="h4" gutterBottom>
           Our Creative Skills
         </Typography>
-        <Box my={2}>
-          <Typography>Lorem Ipsum</Typography>
-          <LinearProgress variant="determinate" value={90} />
-        </Box>
-        <Box my={2}>
-          <Typography>Lorem Ipsum</Typography>
-          <LinearProgress variant="determinate" value={80} />
-        </Box>
+        <Grid
+          container
+          spacing={2}
+          my={2}
+          display="grid"
+          gridTemplateColumns={{ xs: "1fr", sm: "1fr 1fr" }}
+        >
+          {skillList.map((item, index) => (
+            <Grid item xs={12} key={index}>
+              <Box>
+                <Typography>
+                  <CircleIcon sx={{ fontSize: 10, mr: 1 }} />
+                  {item}
+                </Typography>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </motion.div>
   );

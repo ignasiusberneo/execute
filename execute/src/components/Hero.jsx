@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import logo from "../assets/logo.png";
 
 function Hero() {
   return (
@@ -9,12 +10,12 @@ function Hero() {
       transition={{ duration: 0.7 }}
     >
       <Box textAlign="center" py={8}>
-        <img src="/logo.png" alt="Logo" style={{ width: 120 }} />
+        <img src={logo} alt="Logo" style={{ width: 250 }} />
         <Typography variant="h3" mt={2}>
-          Execute
+          EXECUTE
         </Typography>
         <Typography variant="h6" mt={1} color="text.secondary">
-          Saya suka makan babi
+          Inovasi Visual untuk Era Digital
         </Typography>
       </Box>
     </motion.div>

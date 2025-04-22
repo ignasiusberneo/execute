@@ -5,6 +5,7 @@ import Skills from './components/Skills'
 import Services from './components/Services'
 import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
+import WhyChooseUs from './components/WhyChooseUs'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Skills />
       <Services />
       <Testimonials />
+      <WhyChooseUs />
       <Footer />
     </>
   )
