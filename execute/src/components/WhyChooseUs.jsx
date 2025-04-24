@@ -19,7 +19,7 @@ function WhyChooseUs() {
     >
       <Container sx={{ py: 5 }}>
         <Typography variant="h4" gutterBottom>
-          Why Choose Us
+          Mengapa Memilih Kami
         </Typography>
         {whyChoose.map((item, index) => (
           <Box key={index} sx={{ mb: 3 }}>

@@ -17,7 +17,7 @@ function Testimonials() {
   return (
     <Container sx={{ py: 5 }}>
       <Typography variant="h4" gutterBottom>
-        Testimonials
+        Testimoni Pelanggan
       </Typography>
       <Swiper
         modules={[Autoplay]}

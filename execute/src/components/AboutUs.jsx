@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
 function AboutUs() {
@@ -11,9 +11,9 @@ function AboutUs() {
     >
       <Container sx={{ py: 5 }}>
         <Typography variant="h4" gutterBottom>
-          About Us
+          Tentang Kami
         </Typography>
-        <Typography variant="body1" pb={3}>HI, KAMI EXECUTE!</Typography>
+        <Typography variant="body1" pb={3}>Hi, kami Execute!</Typography>
         <Typography variant="body1">
           Layanan jasa pembuatan video untuk keperluan promosi maupun edukasi di
           Social Media seperti Instagram Reels, TikTok, maupun Youtube Shorts.

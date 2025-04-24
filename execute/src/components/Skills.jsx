@@ -19,7 +19,7 @@ function Skills() {
     >
       <Container sx={{ py: 5 }}>
         <Typography variant="h4" gutterBottom>
-          Our Creative Skills
+          Skill Kreatif
         </Typography>
         <Grid
           container
