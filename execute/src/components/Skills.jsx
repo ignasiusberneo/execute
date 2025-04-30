@@ -1,15 +1,14 @@
-import {
-  Container,
-  Typography,
-  Box,
-  LinearProgress,
-  Grid,
-} from "@mui/material";
+import { Container, Typography, Box, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 import CircleIcon from "@mui/icons-material/Circle";
 import skillList from "../assets/skillList";
 
 function Skills() {
+  // Split the skills into two columns
+  const half = Math.ceil(skillList.length / 2);
+  const leftSkills = skillList.slice(0, half);
+  const rightSkills = skillList.slice(half);
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -50 }}
@@ -17,27 +16,49 @@ function Skills() {
       transition={{ duration: 0.6 }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <Container sx={{ py: 5 }}>
-        <Typography variant="h4" gutterBottom>
+      <Container maxWidth={false} // disable default container sizing
+  sx={{
+    py: 5,
+    px: 2,
+    backgroundColor: "#D3D3D3",
+    borderRadius: "30px",
+    maxWidth: "800px", // or "md" if you prefer theme breakpoints
+    mx: "auto", // center it horizontally
+    boxShadow: "0px 8px 8px rgba(0, 0, 0, 0.25)"
+  }}>
+        <Typography fontWeight={"bold"} textAlign="center" variant="h4" gutterBottom>
           Skill Kreatif
         </Typography>
         <Grid
           container
-          spacing={2}
+          justifyContent="center"
+          spacing={0}
           my={2}
-          display="grid"
-          gridTemplateColumns={{ xs: "1fr", sm: "1fr 1fr" }}
+          columnGap={20} // Adds space between left and right columns
         >
-          {skillList.map((item, index) => (
-            <Grid item xs={12} key={index}>
-              <Box>
-                <Typography>
+          {/* Left Column */}
+          <Grid item xs={12} sm={5} sx={{}}>
+            <Box display="flex" flexDirection="column" gap={1}>
+              {leftSkills.map((item, index) => (
+                <Typography key={index}>
                   <CircleIcon sx={{ fontSize: 10, mr: 1 }} />
                   {item}
                 </Typography>
-              </Box>
-            </Grid>
-          ))}
+              ))}
+            </Box>
+          </Grid>
+
+          {/* Right Column */}
+          <Grid item xs={12} sm={5}>
+            <Box display="flex" flexDirection="column" gap={1}>
+              {rightSkills.map((item, index) => (
+                <Typography key={index}>
+                  <CircleIcon sx={{ fontSize: 10, mr: 1 }} />
+                  {item}
+                </Typography>
+              ))}
+            </Box>
+          </Grid>
         </Grid>
       </Container>
     </motion.div>

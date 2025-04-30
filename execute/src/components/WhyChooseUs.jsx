@@ -12,24 +12,44 @@ import whyChoose from "../assets/whyChoose";
 function WhyChooseUs() {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6 }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5 }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <Container sx={{ py: 5 }}>
-        <Typography variant="h4" gutterBottom>
-          Mengapa Memilih Kami
+      <Container
+        maxWidth={false} // disable default container sizing
+        sx={{
+          py: 5,
+          px: 2,
+          backgroundColor: "#D3D3D3",
+          borderRadius: "30px",
+          maxWidth: "800px", // or "md" if you prefer theme breakpoints
+          mx: "auto", // center it horizontally
+          boxShadow: "0px 8px 8px rgba(0, 0, 0, 0.25)",
+        }}
+      >
+        <Typography
+          sx={{ textAlign: "center", fontWeight: "bold" }}
+          font
+          variant="h4"
+          gutterBottom
+        >
+          Kenapa Harus Kami?
         </Typography>
-        {whyChoose.map((item, index) => (
-          <Box key={index} sx={{ mb: 3 }}>
-            <Box sx={{ display: "flex", alignItems: "flex-start" }}>
-              <CircleIcon sx={{ fontSize: 10, mt: "6px", mr: 1 }} />
-              <Typography fontWeight="bold">{item.title}</Typography>
-            </Box>
-            <Typography sx={{ ml: 3 }}>{item.description}</Typography>
-          </Box>
-        ))}
+        <Typography textAlign={"center"} variant="body1">
+          Kami nggak cuma bikin konten, kami merancang pengalaman, membangun
+          cerita, dan menciptakan brand yang ngena banget di hati audiens.
+          Dengan team yang berpengalaman lebih dari 5 tahun di dunia content
+          creation, Copywriting yang bikin pesan kamu ngena, Video production &
+          editing yang memukau, Desain grafis kreatif untuk visual yang
+          standout, Acting dan voice over untuk konten yang hidup, Content
+          planning terstruktur yang mendongkrak interaksi. kami sudah bantu
+          banyak bisnis untuk naik level, tampil standout, dan bahkan Viral.
+          Kamu juga sangat bisa mengandalkan kami karena kerja bareng kami tuh
+          satu visi sama kamu! Brand-nya dari kamu, sentuhan Magic-nya dari
+          kami. Yuk, bikin sesuatu yang nggak terlupakan bareng-bareng!
+        </Typography>
       </Container>
     </motion.div>
   );

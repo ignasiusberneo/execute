@@ -4,9 +4,7 @@ import {
   Card,
   CardContent,
   Box,
-  Grid,
 } from "@mui/material";
-import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -15,8 +13,8 @@ import testimonialList from "../assets/testimonialList";
 
 function Testimonials() {
   return (
-    <Container sx={{ py: 5 }}>
-      <Typography variant="h4" gutterBottom>
+    <Container sx={{ py: 5, textAlign: "center" }}>
+      <Typography fontWeight={"bold"} variant="h4" gutterBottom>
         Testimoni Pelanggan
       </Typography>
       <Swiper
@@ -27,51 +25,45 @@ function Testimonials() {
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
+          reverseDirection: true,
         }}
         breakpoints={{
           600: { slidesPerView: 1 },
           900: { slidesPerView: 2 },
           1200: { slidesPerView: 3 },
         }}
+        style={{ paddingBottom: "10px" }}
       >
         {testimonialList.map((item, index) => (
           <SwiperSlide key={index}>
-            <Card sx={{ boxShadow: 3, height: "100%" }}>
-              <CardContent>
-                <Typography>"{item.comment}"</Typography>
-                <Typography variant="subtitle2" mt={2}>
-                  - {item.name}
-                </Typography>
-              </CardContent>
-            </Card>
+            <Box
+              sx={{
+                height: "100%",
+                display: "flex",
+                alignItems: "stretch",
+              }}
+            >
+              <Card
+                sx={{
+                  boxShadow: 3,
+                  width: "100%",
+                  height: "100%", // force full height within slide
+                  minHeight: 220,  // consistent base height (adjust as needed)
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                }}
+              >
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography sx={{ mb: 2 }}>"{item.comment}"</Typography>
+                  <Typography variant="subtitle2">- {item.name}</Typography>
+                </CardContent>
+              </Card>
+            </Box>
           </SwiperSlide>
         ))}
       </Swiper>
     </Container>
-    // <motion.div
-    //   initial={{ opacity: 0, y: 50 }}
-    //   whileInView={{ opacity: 1, y: 0 }}
-    //   transition={{ duration: 0.7 }}
-    //   viewport={{ once: true, amount: 0.3 }}
-    // >
-    //   <Container sx={{ py: 5 }}>
-    //     <Typography variant="h4" gutterBottom>
-    //       Testimonials
-    //     </Typography>
-    //     <Box sx={{display: "flex", flexDirection: "column", gap: 3}}>
-    //       {testimonialList.map((item, index) => (
-    //         <Card sx={{boxShadow: 3}} key={index}>
-    //           <CardContent>
-    //             <Typography>"{item.comment}"</Typography>
-    //             <Typography variant="subtitle2" mt={2}>
-    //               - {item.name}
-    //             </Typography>
-    //           </CardContent>
-    //         </Card>
-    //       ))}
-    //     </Box>
-    //   </Container>
-    // </motion.div>
   );
 }
 

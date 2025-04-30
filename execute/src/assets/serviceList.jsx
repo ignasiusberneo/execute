@@ -2,6 +2,7 @@ const serviceList = [
     {
       title: "BASIC PACKAGE",
       description: "1 Konten Video Reels/Tiktok",
+      description2: "",
       detail: [
         "Fresh and Creative Concept",
         "Durasi konten max 1 menit",
@@ -12,7 +13,8 @@ const serviceList = [
     },
     {
       title: "STANDARD PACKAGE",
-      description: "11 Konten Video Reels/Tiktok + 1 Konten Video (BONUS)",
+      description: "11 Konten Video Reels/Tiktok +",
+      description2: " 1 Konten Video (BONUS)",
       detail: [
         "Fresh and Creative Concept",
         "Durasi konten max 1 menit",
@@ -24,7 +26,8 @@ const serviceList = [
     },
     {
       title: "PREMIUM PACKAGE",
-      description: "22 Konten Video Reels/Tiktok + 4 Konten Video (BONUS)",
+      description: "22 Konten Video Reels/Tiktok +",
+      description2: "4 Konten Video (BONUS)",
       detail: [
         "Fresh and Creative Concept",
         "Durasi konten max 1 menit",
@@ -36,7 +39,8 @@ const serviceList = [
     },
     {
       title: "AESTHETIC PACKAGE",
-      description: "DESIGN-VIDEO-DESIGN 10 VIDEO + 20 DESIGN",
+      description: "DESIGN-VIDEO-DESIGN",
+      description2: "10 VIDEO + 20 DESIGN",
       detail: [
         "Posting Terima Beres!!!",
         "Fresh and Creative Concept",
@@ -49,8 +53,9 @@ const serviceList = [
       ],
     },
     {
-      title: "CONSISTEN PACKAGE",
-      description: "VIDEO-DESIGN-VIDEO 20 VIDEO + 10 DESIGN",
+      title: "CONSISTENT PACKAGE",
+      description: "VIDEO-DESIGN-VIDEO",
+      description2: "20 VIDEO + 10 DESIGN",
       detail: [
         "Posting Terima Beres!!!",
         "Fresh and Creative Concept",
@@ -61,7 +66,7 @@ const serviceList = [
         "Free 2 Design Feeds Instagram",
         "Free 3 Konten Video IG Reels/TikTok",
         "Free Visit 1x Area Jabodetabek",
-        "Free Footage Visit (menjadi Hak Milik)",
+        "Free Footage Visit (Hak Milik)",
       ],
     },
   ];

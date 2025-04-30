@@ -1,10 +1,10 @@
 const skillList = [
     "Content Planning & Strategy",
-    "Script Writer & Story Telling",
-    "Marketing",
-    "Video Production & Editing",
+    "Scriptwriting & Copywriting",
     "Graphic & Motion Design",
-    "Trendspotting & Creative Direction",
+    "Video Production & Editing",
+    "Marketing",
+    "Trend Awareness",
     "Personal Branding Development",
     "Analytics & Insight Reading"
 ]

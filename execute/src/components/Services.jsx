@@ -6,12 +6,22 @@ import {
   CardContent,
   Button,
   Box,
+  IconButton,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import CircleIcon from "@mui/icons-material/Circle";
 import serviceList from "../assets/serviceList";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 function Services() {
+  // Define fixed dimensions for the card.
+  const cardWidth = "350px";
+  const cardHeightShort = "400px"; // Height for the first 3 short cards
+  const cardHeightLong = "500px"; // Height for the last 2 longer cards
+
+  // Split the serviceList into two arrays: first 3 and last 2
+  const firstThreeServices = serviceList.slice(0, 3);
+  const lastTwoServices = serviceList.slice(3);
 
   return (
     <Container sx={{ py: 5 }}>
@@ -22,14 +32,18 @@ function Services() {
         textAlign="center"
         gap={1}
       >
-        <Typography variant="h4" gutterBottom>
-          Penawaran
+        <Typography fontWeight={"bold"} variant="h4" gutterBottom>
+          Produk
         </Typography>
         <Grid container spacing={3} justifyContent="center">
-          {serviceList.map((service, index) => (
+          {/* First 3 cards (short) */}
+          {firstThreeServices.map((service, index) => (
             <Grid
-              size={{ xs: 12, sm: 6, md: 4 }}
               key={index}
+              item
+              xs={12}
+              sm={6}
+              md={4}
               sx={{ display: "flex", justifyContent: "center" }}
             >
               <motion.div
@@ -37,43 +51,234 @@ function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                style={{width: "100%"}}
+                style={{ width: cardWidth, height: cardHeightShort }}
               >
-                <Card
+                {/* Wrapper for Card and its frame with fixed height */}
+                <Box
                   sx={{
-                    height: "100%",
-                    width: '100%',
-                    boxShadow: 3,
+                    position: "relative",
+                    width: cardWidth,
+                    height: cardHeightShort,
+                    overflow: "visible",
                     display: "flex",
                     flexDirection: "column",
-                    flexGrow: 1,
                   }}
                 >
-                  <CardContent
+                  <Card
                     sx={{
+                      backgroundColor: "#808080", // Gray background for first 3 cards
                       display: "flex",
                       flexDirection: "column",
-                      flexGrow: 1,
-                      alignItems: "center",
-                      textAlign: "center",
+                      position: "relative",
+                      boxShadow: "none",
+                      padding: 0,
+                      overflow: "visible",
+                      width: cardWidth,
+                      height: "100%",
                     }}
                   >
-                    <Typography sx={{mb: 2}} variant="h6">{service.title}</Typography>
-                    <Typography sx={{ fontWeight: "bold" }}>
-                      {service.description}
-                    </Typography>
-                    {service.detail.map((detail, idx) => (
-                      <Typography>
-                        <CircleIcon sx={{ fontSize: 10, mr: 1 }} />
-                        {detail}
+                    <CardContent
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        textAlign: "center",
+                        padding: "16px",
+                        flexGrow: 1,
+                        color: "#FFFFFF",
+                      }}
+                    >
+                      {/* Service Title with White Background */}
+                      <Typography
+                        sx={{
+                          mb: 2,
+                          backgroundColor: "#FFFFFF", // White background for title
+                          color: "#404040", // Font color matching the card background
+                          padding: "4px 8px", // Adding some padding for better readability
+                          borderRadius: "4px", // Optional: Round corners for the title
+                          boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)",
+                        }}
+                        variant="h6"
+                      >
+                        {service.title}
                       </Typography>
-                    ))}
-                    <Box sx={{ flexGrow: 1 }} />
-                    <Button variant="contained" sx={{ mt: 2 }}>
-                      Chat
-                    </Button>
-                  </CardContent>
-                </Card>
+                      <Box mb={2}>
+                        <Typography sx={{ fontWeight: "bold" }}>
+                          {service.description}
+                        </Typography>
+                        <Typography sx={{ fontWeight: "bold" }}>
+                          {service.description2}
+                        </Typography>
+                      </Box>
+                      {service.detail.map((detail, idx) => (
+                        <Typography key={idx}>
+                          <CircleIcon sx={{ fontSize: 10, mr: 1 }} />
+                          {detail}
+                        </Typography>
+                      ))}
+                      <Box sx={{ flexGrow: 1 }} />
+                      <IconButton
+                        color="inherit"
+                        sx={{
+                          mt: 2,
+                          backgroundColor: "#25D366",
+                          "&:hover": { backgroundColor: "#1DA851" },
+                          color: "#FFFFFF",
+                        }}
+                      >
+                        <WhatsAppIcon />
+                      </IconButton>
+                    </CardContent>
+                  </Card>
+
+                  {/* Frame elements */}
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: "-10px",
+                      width: "10px",
+                      height: "70%",
+                      bgcolor: "#C0C0C0",
+                      zIndex: 3,
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      bottom: "-10px",
+                      left: "-10px",
+                      width: "calc(75% + 10px)",
+                      height: "10px",
+                      bgcolor: "#C0C0C0",
+                      zIndex: 3,
+                    }}
+                  />
+                </Box>
+              </motion.div>
+            </Grid>
+          ))}
+
+          {/* Last 2 cards (long) with different background color */}
+          {lastTwoServices.map((service, index) => (
+            <Grid
+              key={index}
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                style={{ width: cardWidth, height: cardHeightLong }}
+              >
+                {/* Wrapper for Card and its frame with fixed height */}
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: cardWidth,
+                    height: cardHeightLong,
+                    overflow: "visible",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <Card
+                    sx={{
+                      backgroundColor: "#404040", // Blue background for last 2 cards
+                      display: "flex",
+                      flexDirection: "column",
+                      position: "relative",
+                      boxShadow: "none",
+                      padding: 0,
+                      overflow: "visible",
+                      width: cardWidth,
+                      height: "100%",
+                    }}
+                  >
+                    <CardContent
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        textAlign: "center",
+                        padding: "16px",
+                        flexGrow: 1,
+                        color: "#FFFFFF",
+                      }}
+                    >
+                      {/* Service Title with White Background */}
+                      <Typography
+                        sx={{
+                          mb: 2,
+                          backgroundColor: "#FFFFFF", // White background for title
+                          color: "#404040", // Font color matching the card background
+                          padding: "4px 8px",
+                          borderRadius: "4px",
+                          boxShadow: "0px 8px 16px rgba(255, 255, 255, 0.2)",
+                        }}
+                        variant="h6"
+                      >
+                        {service.title}
+                      </Typography>
+
+                      <Box mb={2}>
+                        <Typography sx={{ fontWeight: "bold" }}>
+                          {service.description}
+                        </Typography>
+                        <Typography sx={{ fontWeight: "bold" }}>
+                          {service.description2}
+                        </Typography>
+                      </Box>
+                      {service.detail.map((detail, idx) => (
+                        <Typography key={idx}>
+                          <CircleIcon sx={{ fontSize: 10, mr: 1 }} />
+                          {detail}
+                        </Typography>
+                      ))}
+                      <Box sx={{ flexGrow: 1 }} />
+                      <IconButton
+                        color="inherit"
+                        sx={{
+                          mt: 2,
+                          backgroundColor: "#25D366",
+                          "&:hover": { backgroundColor: "#1DA851" },
+                          color: "#FFFFFF",
+                        }}
+                      >
+                        <WhatsAppIcon />
+                      </IconButton>
+                    </CardContent>
+                  </Card>
+
+                  {/* Frame elements */}
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: "-10px",
+                      width: "10px",
+                      height: "70%",
+                      bgcolor: "#C0C0C0",
+                      zIndex: 3,
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      bottom: "-10px",
+                      left: "-10px",
+                      width: "calc(75% + 10px)",
+                      height: "10px",
+                      bgcolor: "#C0C0C0",
+                      zIndex: 3,
+                    }}
+                  />
+                </Box>
               </motion.div>
             </Grid>
           ))}
