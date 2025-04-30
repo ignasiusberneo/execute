@@ -35,16 +35,28 @@ function Services() {
         <Typography fontWeight={"bold"} variant="h4" gutterBottom>
           Produk
         </Typography>
-        <Grid container spacing={3} justifyContent="center">
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: 3,
+          }}
+        >
           {/* First 3 cards (short) */}
           {firstThreeServices.map((service, index) => (
-            <Grid
+            <Box
               key={index}
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              sx={{ display: "flex", justifyContent: "center" }}
+              sx={{
+                flex: "1 1 100%",
+                maxWidth: "100%",
+                "@media (min-width: 1200px)": {
+                  flex: "1 1 calc(33.333% - 24px)", // 3 items per row, accounting for gap
+                  maxWidth: "calc(33.333% - 24px)",
+                },
+                display: "flex",
+                justifyContent: "center",
+              }}
             >
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -117,17 +129,24 @@ function Services() {
                         </Typography>
                       ))}
                       <Box sx={{ flexGrow: 1 }} />
-                      <IconButton
-                        color="inherit"
-                        sx={{
-                          mt: 2,
-                          backgroundColor: "#25D366",
-                          "&:hover": { backgroundColor: "#1DA851" },
-                          color: "#FFFFFF",
-                        }}
+                      <a
+                        href="https://wa.me/6281227137167" // Replace with your phone number
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: "none" }}
                       >
-                        <WhatsAppIcon />
-                      </IconButton>
+                        <IconButton
+                          color="inherit"
+                          sx={{
+                            mt: 2,
+                            backgroundColor: "#25D366",
+                            "&:hover": { backgroundColor: "#1DA851" },
+                            color: "#FFFFFF",
+                          }}
+                        >
+                          <WhatsAppIcon />
+                        </IconButton>
+                      </a>
                     </CardContent>
                   </Card>
 
@@ -156,18 +175,23 @@ function Services() {
                   />
                 </Box>
               </motion.div>
-            </Grid>
+            </Box>
           ))}
 
           {/* Last 2 cards (long) with different background color */}
           {lastTwoServices.map((service, index) => (
-            <Grid
+            <Box
               key={index}
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              sx={{ display: "flex", justifyContent: "center" }}
+              sx={{
+                flex: "1 1 100%",
+                maxWidth: "100%",
+                "@media (min-width: 1200px)": {
+                  flex: "1 1 calc(33.333% - 24px)", // 3 items per row, accounting for gap
+                  maxWidth: "calc(33.333% - 24px)",
+                },
+                display: "flex",
+                justifyContent: "center",
+              }}
             >
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -241,17 +265,24 @@ function Services() {
                         </Typography>
                       ))}
                       <Box sx={{ flexGrow: 1 }} />
-                      <IconButton
-                        color="inherit"
-                        sx={{
-                          mt: 2,
-                          backgroundColor: "#25D366",
-                          "&:hover": { backgroundColor: "#1DA851" },
-                          color: "#FFFFFF",
-                        }}
+                      <a
+                        href="https://wa.me/6281227137167" // Replace with your phone number
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: "none" }}
                       >
-                        <WhatsAppIcon />
-                      </IconButton>
+                        <IconButton
+                          color="inherit"
+                          sx={{
+                            mt: 2,
+                            backgroundColor: "#25D366",
+                            "&:hover": { backgroundColor: "#1DA851" },
+                            color: "#FFFFFF",
+                          }}
+                        >
+                          <WhatsAppIcon />
+                        </IconButton>
+                      </a>
                     </CardContent>
                   </Card>
 
@@ -280,9 +311,9 @@ function Services() {
                   />
                 </Box>
               </motion.div>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Box>
     </Container>
   );

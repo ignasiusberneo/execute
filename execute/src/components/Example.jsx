@@ -111,17 +111,24 @@ function Example() {
           <Typography fontWeight={"bold"} mt={2} variant="body1">
             Mau liat hasil karya kami lainnya?
           </Typography>
-          <IconButton
-            color="inherit"
-            sx={{
-              mt: 1,
-              backgroundColor: "#25D366",
-              "&:hover": { backgroundColor: "#1DA851" },
-              color: "#FFFFFF",
-            }}
+          <a
+            href="https://wa.me/6281227137167" // Replace with your phone number
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
           >
-            <WhatsAppIcon />
-          </IconButton>
+            <IconButton
+              color="inherit"
+              sx={{
+                mt: 1,
+                backgroundColor: "#25D366",
+                "&:hover": { backgroundColor: "#1DA851" },
+                color: "#FFFFFF",
+              }}
+            >
+              <WhatsAppIcon />
+            </IconButton>
+          </a>
         </Box>
       </Box>
     </Container>
