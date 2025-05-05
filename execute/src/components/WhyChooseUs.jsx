@@ -41,13 +41,13 @@ function WhyChooseUs() {
           Kami nggak cuma bikin konten, kami merancang pengalaman, membangun
           cerita, dan menciptakan brand yang ngena banget di hati audiens.
           Dengan team yang berpengalaman lebih dari 5 tahun di dunia content
-          creation, Copywriting yang bikin pesan kamu ngena, Video production &
-          editing yang memukau, Desain grafis kreatif untuk visual yang
-          standout, Acting dan voice over untuk konten yang hidup, Content
-          planning terstruktur yang mendongkrak interaksi. kami sudah bantu
-          banyak bisnis untuk naik level, tampil standout, dan bahkan Viral.
+          creation, copywriting yang bikin pesan kamu ngena, video production &
+          editing yang memukau, desain grafis kreatif untuk visual yang
+          standout, acting dan voice over untuk konten yang hidup, content
+          planning terstruktur yang mendongkrak interaksi. Kami sudah bantu
+          banyak bisnis untuk naik level, tampil standout, dan bahkan viral.
           Kamu juga sangat bisa mengandalkan kami karena kerja bareng kami tuh
-          satu visi sama kamu! Brand-nya dari kamu, sentuhan Magic-nya dari
+          satu visi sama kamu! Brand-nya dari kamu, sentuhan magic-nya dari
           kami. Yuk, bikin sesuatu yang nggak terlupakan bareng-bareng!
         </Typography>
       </Container>

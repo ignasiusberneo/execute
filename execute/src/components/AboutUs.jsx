@@ -17,14 +17,22 @@ function AboutUs() {
           Hi, kami Execute!
         </Typography>
         <Typography variant="body1">
-          Layanan jasa pembuatan video untuk keperluan promosi maupun edukasi di
-          Social Media seperti Instagram Reels dan TikTok.
-          Kami juga menyediakan layanan jasa kelola Social Media mulai dari Ide
-          Konten sampai dengan posting terima beres! Yang pasti bakalan bikin
-          tampilan Social Media-mu lebih Aesthetic dan Menarik. kami sudah
-          berpengalaman di bidang ini selama kurang lebih 5 tahun dan telah
-          membantu berbagai brand dari perusahaan besar hingga UMKM dalam
-          membuat konten yang relevan, dan mudah diingat.
+          Kami adalah tim kreatif yang berfokus pada layanan pembuatan video
+          maupun desain visual untuk kebutuhan social mediamu seperti Instagram
+          dan TikTok. dengan menggabungkan ide segar, storytelling yang kuat,
+          serta teknik editing profesional, kami membantu brand dan bisnismu
+          tampil lebih menarik di platform digital.
+        </Typography>
+        <Typography variant="body1">
+          Mulai dari konsep, pengambilan gambar, hingga proses editing akhir,
+          tim kami siap mendampingi setiap langkah untuk menghasilkan konten
+          yang engaging, dan relevan. Kami percaya bahwa video yang tepat dapat
+          memperkuat identitas brand dan menjangkau audiens lebih luas.
+        </Typography>
+        <Typography variant="body1">
+          Kami sudah berpengalaman di bidang ini selama kurang lebih 5 tahun dan
+          telah membantu berbagai brand dari perusahaan besar hingga UMKM dalam
+          membuat konten.
         </Typography>
       </Container>
     </motion.div>
