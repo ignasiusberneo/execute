@@ -1,18 +1,17 @@
 // import './App.css'
-import Hero from './components/Hero'
-import AboutUs from './components/AboutUs'
-import Skills from './components/Skills'
-import Services from './components/Services'
-import Testimonials from './components/Testimonials'
-import Footer from './components/Footer'
-import WhyChooseUs from './components/WhyChooseUs'
-import Example from './components/Example'
-import { Box } from '@mui/material'
-import Navbar from './components/Navbar'
-import { useRef } from 'react'
+import Hero from "./components/Hero";
+import AboutUs from "./components/AboutUs";
+import Skills from "./components/Skills";
+import Services from "./components/Services";
+import Testimonials from "./components/Testimonials";
+import Footer from "./components/Footer";
+import WhyChooseUs from "./components/WhyChooseUs";
+import Example from "./components/Example";
+import { Box } from "@mui/material";
+import Navbar from "./components/Navbar";
+import { useRef } from "react";
 
 function App() {
-
   const tentangKamiRef = useRef(null);
   const produkRef = useRef(null);
   const hasilKaryaRef = useRef(null);
@@ -25,33 +24,35 @@ function App() {
 
   return (
     <Box>
-      <Navbar onNavClick={{
+      <Navbar
+        onNavClick={{
           tentangKami: () => scrollToSection(tentangKamiRef),
           produk: () => scrollToSection(produkRef),
           hasilKarya: () => scrollToSection(hasilKaryaRef),
           kenapaHarusKami: () => scrollToSection(kenapaHarusKamiRef),
           kontak: () => scrollToSection(kontakRef),
-        }} /> 
+        }}
+      />
       <Hero />
       <Box ref={tentangKamiRef}>
-      <AboutUs  />
+        <AboutUs />
       </Box>
       <Skills />
       <div ref={produkRef}>
-      <Services />
+        <Services />
       </div>
       <div ref={hasilKaryaRef}>
-      <Example />
+        <Example />
       </div>
       <Testimonials />
       <div ref={kenapaHarusKamiRef}>
-      <WhyChooseUs />
+        <WhyChooseUs />
       </div>
       <div ref={kontakRef}>
-      <Footer />
+        <Footer />
       </div>
     </Box>
-  )
+  );
 }
 
-export default App
+export default App;
