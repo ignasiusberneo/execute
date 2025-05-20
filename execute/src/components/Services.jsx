@@ -78,7 +78,7 @@ function Services() {
                 >
                   <Card
                     sx={{
-                      backgroundColor: "#808080", // Gray background for first 3 cards
+                      backgroundColor: "#FC8F00", // Gray background for first 3 cards
                       display: "flex",
                       flexDirection: "column",
                       position: "relative",
@@ -97,7 +97,7 @@ function Services() {
                         textAlign: "center",
                         padding: "16px",
                         flexGrow: 1,
-                        color: "#FFFFFF",
+                        // color: "#FFFFFF",
                       }}
                     >
                       {/* Service Title with White Background */}
@@ -158,7 +158,7 @@ function Services() {
                       left: "-10px",
                       width: "10px",
                       height: "70%",
-                      bgcolor: "#C0C0C0",
+                      bgcolor: "#8D0000",
                       zIndex: 3,
                     }}
                   />
@@ -169,7 +169,7 @@ function Services() {
                       left: "-10px",
                       width: "calc(75% + 10px)",
                       height: "10px",
-                      bgcolor: "#C0C0C0",
+                      bgcolor: "#8D0000",
                       zIndex: 3,
                     }}
                   />
@@ -213,7 +213,7 @@ function Services() {
                 >
                   <Card
                     sx={{
-                      backgroundColor: "#404040", // Blue background for last 2 cards
+                      backgroundColor: "#8D0000", // Blue background for last 2 cards
                       display: "flex",
                       flexDirection: "column",
                       position: "relative",
@@ -294,7 +294,7 @@ function Services() {
                       left: "-10px",
                       width: "10px",
                       height: "70%",
-                      bgcolor: "#C0C0C0",
+                      bgcolor: "#FC8F00",
                       zIndex: 3,
                     }}
                   />
@@ -305,7 +305,7 @@ function Services() {
                       left: "-10px",
                       width: "calc(75% + 10px)",
                       height: "10px",
-                      bgcolor: "#C0C0C0",
+                      bgcolor: "#FC8F00",
                       zIndex: 3,
                     }}
                   />

@@ -20,7 +20,7 @@ function Skills() {
         sx={{
           py: { xs: 3, sm: 5 },
           px: { xs: 2, sm: 4 },
-          backgroundColor: "#D3D3D3",
+          backgroundColor: "#FC8F00",
           borderRadius: "30px",
           maxWidth: { xs: "100%", sm: "90%", md: "800px" },
           mx: "auto",
@@ -50,10 +50,7 @@ function Skills() {
           {/* Left Column */}
           <Box flex="1" display="flex" flexDirection="column" gap={1}>
             {leftSkills.map((item, index) => (
-              <Typography
-                key={index}
-                fontSize={{ xs: "0.9rem", sm: "1rem" }}
-              >
+              <Typography key={index} fontSize={{ xs: "0.9rem", sm: "1rem" }}>
                 <CircleIcon sx={{ fontSize: 10, mr: 1 }} />
                 {item}
               </Typography>
@@ -63,10 +60,7 @@ function Skills() {
           {/* Right Column */}
           <Box flex="1" display="flex" flexDirection="column" gap={1}>
             {rightSkills.map((item, index) => (
-              <Typography
-                key={index}
-                fontSize={{ xs: "0.9rem", sm: "1rem" }}
-              >
+              <Typography key={index} fontSize={{ xs: "0.9rem", sm: "1rem" }}>
                 <CircleIcon sx={{ fontSize: 10, mr: 1 }} />
                 {item}
               </Typography>

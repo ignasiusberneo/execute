@@ -1,10 +1,4 @@
-import {
-  Container,
-  Typography,
-  Card,
-  CardContent,
-  Box,
-} from "@mui/material";
+import { Container, Typography, Card, CardContent, Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -48,15 +42,20 @@ function Testimonials() {
                   boxShadow: 3,
                   width: "100%",
                   height: "100%", // force full height within slide
-                  minHeight: 220,  // consistent base height (adjust as needed)
+                  minHeight: 220, // consistent base height (adjust as needed)
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
+                  backgroundColor: "#8D0000",
                 }}
               >
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography sx={{ mb: 2 }}>"{item.comment}"</Typography>
-                  <Typography variant="subtitle2">- {item.name}</Typography>
+                  <Typography color="white" sx={{ mb: 2 }}>
+                    "{item.comment}"
+                  </Typography>
+                  <Typography color="white" variant="subtitle2">
+                    - {item.name}
+                  </Typography>
                 </CardContent>
               </Card>
             </Box>

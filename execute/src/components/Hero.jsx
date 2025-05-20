@@ -2,22 +2,26 @@ import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png";
+import executeNewLogo from "../assets/executeNewLogo.JPG";
+import executeLogo from "../assets/executeLogo.PNG";
+import heroBackground2 from "../assets/heroBackground2.jpg";
 
 function Hero() {
   return (
     <Box
       textAlign="center"
       py={8}
+      bgcolor={"#FC8F00"}
       sx={{
-        backgroundImage: "url(/BG.jpg)", // Replace with your image path
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        // backgroundImage: "url(/heroBackground2.jpg)", // Replace with your image path
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
+        // backgroundRepeat: "no-repeat",
         width: "100%",
         py: 10, // Adds top & bottom padding
         px: 2,
         color: "white",
-        textAlign: "center",
+        // textAlign: "center",
       }}
     >
       <motion.div
@@ -25,10 +29,10 @@ function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <img src={logo2} alt="Logo" style={{ width: 250 }} />
-        <Typography variant="h6" mt={5} color="white">
+        <img src={executeLogo} alt="Logo" style={{ width: 250 }} />
+        {/* <Typography variant="h6" mt={5} color="white">
           Turning Vision Into Action
-        </Typography>
+        </Typography> */}
       </motion.div>
     </Box>
   );

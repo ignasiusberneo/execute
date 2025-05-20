@@ -40,7 +40,7 @@ function Navbar({ onNavClick }) {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#D3D3D3", boxShadow: "none" }}
+      sx={{ backgroundColor: "white", boxShadow: "none" }}
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Left: Logo + Social */}

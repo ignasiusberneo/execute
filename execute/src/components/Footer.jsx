@@ -5,7 +5,7 @@ import { SiTiktok, SiInstagram } from "react-icons/si";
 
 function Footer() {
   return (
-    <Box bgcolor="#f5f5f5" py={5} mt={5}>
+    <Box bgcolor="#8D0000" py={5} mt={5}>
       <Container>
         <Grid
           container
@@ -16,7 +16,7 @@ function Footer() {
           {/* Left - Social Media */}
           <Grid item xs={12} md="auto">
             <Box textAlign="center">
-              <Typography variant="h6" gutterBottom>
+              <Typography color="white" variant="h6" gutterBottom>
                 Follow Us
               </Typography>
               <IconButton
@@ -24,14 +24,14 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <SiInstagram size={24} />
+                <SiInstagram color="white" size={24} />
               </IconButton>
               <IconButton
                 href="https://www.tiktok.com/@executeofficial.id"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <SiTiktok size={24} />
+                <SiTiktok color="white" size={24} />
               </IconButton>
             </Box>
           </Grid>
@@ -39,7 +39,7 @@ function Footer() {
           {/* Center - Address */}
           <Grid item xs={12} md="auto">
             <Box textAlign="center">
-              <Typography variant="h6" gutterBottom>
+              <Typography color="white" variant="h6" gutterBottom>
                 Address
               </Typography>
               <Typography
@@ -47,6 +47,7 @@ function Footer() {
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
+                color="white"
                 gap={1}
               >
                 <LocationOnIcon fontSize="small" />
@@ -58,10 +59,10 @@ function Footer() {
           {/* Right - Contact */}
           <Grid item xs={12} md="auto">
             <Box textAlign="center">
-              <Typography variant="h6" gutterBottom>
+              <Typography color="white" variant="h6" gutterBottom>
                 Contact Us
               </Typography>
-              <Typography
+              <Typography color="white"
                 variant="body2"
                 display="flex"
                 justifyContent={{ xs: "center", md: "flex-end" }}
@@ -77,7 +78,7 @@ function Footer() {
 
         {/* Copyright */}
         <Box textAlign="center" mt={4}>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="white">
             © 2025 Execute. All rights reserved.
           </Typography>
         </Box>
