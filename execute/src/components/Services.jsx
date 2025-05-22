@@ -78,7 +78,7 @@ function Services() {
                 >
                   <Card
                     sx={{
-                      backgroundColor: "#FC8F00", // Gray background for first 3 cards
+                      backgroundColor: "#FF9539", // Gray background for first 3 cards
                       display: "flex",
                       flexDirection: "column",
                       position: "relative",
@@ -294,7 +294,7 @@ function Services() {
                       left: "-10px",
                       width: "10px",
                       height: "70%",
-                      bgcolor: "#FC8F00",
+                      bgcolor: "#FF9539",
                       zIndex: 3,
                     }}
                   />
@@ -305,7 +305,7 @@ function Services() {
                       left: "-10px",
                       width: "calc(75% + 10px)",
                       height: "10px",
-                      bgcolor: "#FC8F00",
+                      bgcolor: "#FF9539",
                       zIndex: 3,
                     }}
                   />

@@ -11,12 +11,13 @@ function Hero() {
     <Box
       textAlign="center"
       py={8}
-      bgcolor={"#FC8F00"}
+      // bgcolor={"#FC8F00"}
       sx={{
         // backgroundImage: "url(/heroBackground2.jpg)", // Replace with your image path
         // backgroundSize: "cover",
         // backgroundPosition: "center",
         // backgroundRepeat: "no-repeat",
+        background: "linear-gradient(135deg, 	#FFFFFF, #FF9539 )", // <-- Gradient
         width: "100%",
         py: 10, // Adds top & bottom padding
         px: 2,

@@ -20,7 +20,7 @@ function Skills() {
         sx={{
           py: { xs: 3, sm: 5 },
           px: { xs: 2, sm: 4 },
-          backgroundColor: "#FC8F00",
+          backgroundColor: "#FF9539",
           borderRadius: "30px",
           maxWidth: { xs: "100%", sm: "90%", md: "800px" },
           mx: "auto",

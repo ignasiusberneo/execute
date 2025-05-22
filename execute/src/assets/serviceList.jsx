@@ -49,6 +49,7 @@ const serviceList = [
       "Max Revisi minor 1x",
       "Free 2 Design Feeds Instagram",
       "Free 1 Konten Video IG Reels/TikTok",
+      "Free posting terima beres"
     ],
   },
   {
@@ -63,6 +64,7 @@ const serviceList = [
       "Max Revisi minor 3x",
       "Free 2 Design Feeds Instagram",
       "Free 3 Konten Video IG Reels/TikTok",
+      "Free posting terima beres"
     ],
   },
 ];

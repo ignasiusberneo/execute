@@ -22,7 +22,7 @@ function WhyChooseUs() {
         sx={{
           py: 5,
           px: 2,
-          backgroundColor: "#FC8F00",
+          backgroundColor: "#FF9539",
           borderRadius: "30px",
           maxWidth: "800px", // or "md" if you prefer theme breakpoints
           mx: "auto", // center it horizontally
