@@ -2,21 +2,44 @@ import { Box, Container, Grid, Typography, IconButton } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { SiTiktok, SiInstagram } from "react-icons/si";
+import backgroundFooter from "../assets/backgroundFooter.png";
 
 function Footer() {
   return (
-    <Box bgcolor="#8D0000" py={5} mt={5}>
-      <Container>
+    <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          display: "inline-block", // Let height follow content
+          textAlign: "center",
+          py: 5, // ← Adds vertical padding around logo (adjust as needed)
+          mt: 2
+        }}
+      >
+        <Box
+                  component="img"
+                  src={ backgroundFooter}
+                  alt="Background"
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "fill", // or "contain" to avoid distortion
+                    zIndex: -1,
+                  }}
+                />
         <Grid
           container
           justifyContent="space-between"
           alignItems="flex-start"
           spacing={4}
+          mx={3}
         >
-          {/* Left - Social Media */}
           <Grid item xs={12} md="auto">
             <Box textAlign="center">
-              <Typography color="white" variant="h6" gutterBottom>
+              <Typography color="#820101" variant="h6" gutterBottom>
                 Follow Us
               </Typography>
               <IconButton
@@ -24,22 +47,20 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <SiInstagram color="white" size={24} />
+                <SiInstagram color="#820101" size={24} />
               </IconButton>
               <IconButton
                 href="https://www.tiktok.com/@executeofficial.id"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <SiTiktok color="white" size={24} />
+                <SiTiktok color="#820101" size={24} />
               </IconButton>
             </Box>
           </Grid>
-
-          {/* Center - Address */}
           <Grid item xs={12} md="auto">
             <Box textAlign="center">
-              <Typography color="white" variant="h6" gutterBottom>
+              <Typography color="#820101" variant="h6" gutterBottom>
                 Address
               </Typography>
               <Typography
@@ -47,7 +68,7 @@ function Footer() {
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
-                color="white"
+                color="#820101"
                 gap={1}
               >
                 <LocationOnIcon fontSize="small" />
@@ -55,14 +76,12 @@ function Footer() {
               </Typography>
             </Box>
           </Grid>
-
-          {/* Right - Contact */}
           <Grid item xs={12} md="auto">
             <Box textAlign="center">
-              <Typography color="white" variant="h6" gutterBottom>
+              <Typography color="#820101" variant="h6" gutterBottom>
                 Contact Us
               </Typography>
-              <Typography color="white"
+              <Typography color="#820101"
                 variant="body2"
                 display="flex"
                 justifyContent={{ xs: "center", md: "flex-end" }}
@@ -78,11 +97,10 @@ function Footer() {
 
         {/* Copyright */}
         <Box textAlign="center" mt={4}>
-          <Typography variant="body2" color="white">
+          <Typography variant="body2" color="#820101">
             © 2025 Execute. All rights reserved.
           </Typography>
         </Box>
-      </Container>
     </Box>
   );
 }
