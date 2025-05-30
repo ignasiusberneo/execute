@@ -81,8 +81,8 @@ function Example() {
           sx={{
             position: "absolute",
             top: "50%",
-            left: "-5%", // extend box to the left
-            right: "-5%", // extend box to the right
+            left: "0%", // extend box to the left
+            right: "0%", // extend box to the right
             bottom: "-130px", // extend the background a bit lower so it covers the IconButton
             backgroundColor: "#FF9539",
             borderRadius: 4,
