@@ -1,53 +1,71 @@
-import { Box, Container, Typography } from "@mui/material";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import backgroundKenapa from "../assets/backgroundKenapa.png";
-import kenapa from "../assets/kenapa.svg";
+import { Typography, Box } from "@mui/material";
+import { motion } from "framer-motion";
+import element4 from "../assets/element4.png";
 
-function WhyChoouseUs() {
-    const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+function WhyChooseUs() {
   return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5 }}
+      viewport={{ once: true, amount: 0.3 }}
+    >
       <Box
-        sx={{
-          position: "relative",
-          width: "100%",
-          display: "inline-block", // Let height follow content
-          textAlign: "center",
-          py: 5, // ← Adds vertical padding around logo (adjust as needed)
-          mt: 2
-        }}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        gap={8}
+        px={{ xs: 2, md: 12 }}
+        py={5}
+        flexDirection={{ xs: "column", md: "row" }} // Stack on small screens
       >
-        {/* Background image behind everything */}
+        {/* Responsive Image */}
         <Box
           component="img"
-          src={ backgroundKenapa}
-          alt="Background"
+          src={element4}
+          alt="Logo"
           sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "fill", // or "contain" to avoid distortion
-            zIndex: -1,
+            width: 400,
+            display: { xs: "none", md: "block" },
           }}
         />
-  
-        {/* Foreground logo */}
-        <motion.div
-          initial={{ opacity: 0, filter: "blur(8px)" }}
-          animate={{ opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1.5 }}
+
+        <Box
+          sx={{
+            py: 5,
+            px: 2,
+            backgroundColor: "#FDD121",
+            borderRadius: "30px",
+            maxWidth: "800px",
+            mx: "auto",
+            boxShadow: "0px 8px 8px rgba(0, 0, 0, 0.25)",
+          }}
         >
-          <img
-            src={kenapa}
-            alt="Logo"
-            style={{ width: 800, maxWidth: "100%" }}
-          />
-        </motion.div>
+          <Typography
+            sx={{ textAlign: "center", fontWeight: "bold" }}
+            variant="h4"
+            gutterBottom
+          >
+            Kenapa Harus Kami?
+          </Typography>
+
+          <Typography textAlign="center" variant="body1">
+            Kami nggak cuma bikin konten, kami merancang pengalaman, membangun
+            cerita, dan menciptakan brand yang ngena banget di hati audiens.
+            Dengan team yang berpengalaman lebih dari 5 tahun di dunia content
+            creation, copywriting yang bikin pesan kamu ngena, video production
+            & editing yang memukau, desain grafis kreatif untuk visual yang
+            standout, acting dan voice over untuk konten yang hidup, content
+            planning terstruktur yang mendongkrak interaksi. Kami sudah bantu
+            banyak bisnis untuk naik level, tampil standout, dan bahkan viral.
+            Kamu juga sangat bisa mengandalkan kami karena kerja bareng kami tuh
+            satu visi sama kamu! Brand-nya dari kamu, sentuhan magic-nya dari
+            kami. Yuk, bikin sesuatu yang nggak terlupakan bareng-bareng!
+          </Typography>
+        </Box>
       </Box>
-    );
+    </motion.div>
+  );
 }
 
-export default WhyChoouseUs;
+export default WhyChooseUs;

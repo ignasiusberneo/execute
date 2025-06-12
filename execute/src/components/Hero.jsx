@@ -1,80 +1,77 @@
-import { Box } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import websiteLogo from "../assets/logo-website.png";
-import backgroundLogo from "../assets/background-logo.png";
-import logoBackground from "../assets/logoBackground.svg";
-import logo from "../assets/logo.svg";
+import heroIcon from "../assets/heroIcon.png";
 
 function Hero() {
   return (
     <Box
+      textAlign="center"
+      // bgcolor={"#FC8F00"}
       sx={{
-        position: "relative",
+        // backgroundImage: "url(/heroBackground2.jpg)", // Replace with your image path
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
+        // backgroundRepeat: "no-repeat",
+        background: "#FE3500", // <-- Gradient
         width: "100%",
-        display: "inline-block", // Let height follow content
-        textAlign: "center",
-        py: 15, // ← Adds vertical padding around logo (adjust as needed)
+        // py: 10, // Adds top & bottom padding
+        px: 2,
+        color: "white",
+        // textAlign: "center",
       }}
     >
-      {/* Background image behind everything */}
-      <Box
-        component="img"
-        src={ backgroundLogo}
-        alt="Background"
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "fill", // or "contain" to avoid distortion
-          zIndex: -1,
-        }}
-      />
-
-      {/* Foreground logo */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <img
-          src={logo}
-          alt="Logo"
-          style={{ width: 500, maxWidth: "100%" }}
-        />
+        <Box display="flex" mx={5} gap={5} alignItems="center">
+          <Box
+            display="flex"
+            flexDirection="column"
+            mb={4}
+            justifyContent={"center"}
+          >
+            <Typography
+              sx={{ fontWeight: "bold", fontSize: "2.5rem" }}
+              textAlign={"left"}
+              color="white"
+            >
+              Jasa Pembuatan Video Kreatif
+            </Typography>
+            <Typography
+              sx={{ fontWeight: "bold", fontSize: "2.5rem" }}
+              textAlign={"left"}
+              color="white"
+            >
+              untuk TikTok & Instagram
+            </Typography>
+            <Typography
+              sx={{ fontSize: "1rem" }}
+              textAlign={"left"}
+              color="white"
+            >
+              Hasil Maksimal, Effort Minimal!
+            </Typography>
+            <Button
+             onClick={() => window.open("https://wa.me/6281227137167", "_blank")}
+              sx={{
+                alignSelf: "flex-start", // aligns the button to the left inside the column
+                width: "fit-content", // prevents it from stretching
+                mt: 2,
+                backgroundColor: "#25D366",
+                color: "white",
+                fontWeight: "bold",
+              }}
+              variant="contained"
+            >
+              Konsultasi
+            </Button>
+          </Box>
+          <img src={heroIcon} alt="Logo" style={{ width: 550 }} />
+        </Box>
       </motion.div>
     </Box>
-    //   <Box
-    //   sx={{
-    //     width: "100%",
-    //     minHeight: "100vh",
-    //     m: 0, // Remove any margin
-    //     p: 0, // Remove any padding
-    //     backgroundImage: `url(${logoBackground})`,
-    //     backgroundRepeat: "no-repeat",
-    //     backgroundPosition: "center",
-    //     // Option 1: Fill width and auto-adjust height (may leave vertical gaps)
-    //     backgroundSize: "100% auto",
-    //     // Option 2 (if a slight distortion is acceptable): "100% 100%"
-    //     // backgroundSize: "100% 100%",
-    //     display: "flex",
-    //     alignItems: "center",
-    //     justifyContent: "center",
-    //   }}
-    // >
-    //   <motion.div
-    //     initial={{ opacity: 0, scale: 0.95 }}
-    //     animate={{ opacity: 1, scale: 1 }}
-    //     transition={{ duration: 1.5 }}
-    //   >
-    //     <img
-    //       src={logo}
-    //       alt="Logo"
-    //       style={{ width: 500, maxWidth: "100%" }}
-    //     />
-    //   </motion.div>
-    // </Box>  
   );
 }
 

@@ -4,11 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
-import backgroundHasilKarya from "../assets/backgroundHasilKarya.png";
-import hasilKarya from "../assets/hasilKarya.svg";
-import mauLiat from "../assets/mauLiat.svg";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 
 // Import slide images
 import example1 from "../assets/example1.png";
@@ -24,8 +19,6 @@ import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRound
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 function Example() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const slides = [
     example1,
     example2,
@@ -37,63 +30,32 @@ function Example() {
   ];
 
   return (
-    <Box
-      sx={{
-        position: "relative",
-        width: "100%",
-        display: "inline-block", // Let height follow content
-        textAlign: "center",
-        py: 5, // ← Adds vertical padding around logo (adjust as needed)
-      }}
-    >
-      {/* Background image behind everything */}
-      <Box
-        component="img"
-        src={backgroundHasilKarya}
-        alt="Background"
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "fill", // or "contain" to avoid distortion
-          zIndex: -1,
-        }}
-      />
-
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={isInView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 1.5 }}
-      >
-        <img
-          src={hasilKarya}
-          alt="Logo"
-          style={{ width: 350, maxWidth: "100%" }}
-        />
-      </motion.div>
-      {/* Foreground logo */}
+    <Container sx={{ py: 5, textAlign: "center" }}>
+      <Typography fontWeight="bold" variant="h4" gutterBottom>
+        Hasil Karya
+      </Typography>
 
       <Box sx={{ position: "relative", height: "500px" }}>
+        {/* Background box on bottom half with extra wide padding.
+            Note: Only the bottom value is adjusted
+            to extend the background downward so that it covers the IconButton. */}
         <Box
           sx={{
             position: "absolute",
             top: "50%",
-            left: "0%", // extend box to the left
-            right: "0%", // extend box to the right
-            bottom: "-130px", // extend the background a bit lower so it covers the IconButton
-            backgroundColor: "#FF9539",
+            left: "-5%", // extend box to the left
+            right: "-5%", // extend box to the right
+            bottom: "-60px", // extend the background a bit lower so it covers the IconButton
+            backgroundColor: "#FDD121",
             borderRadius: 4,
             px: 10,
             pb: 6,
             zIndex: 1,
           }}
         />
-        <Box
-          sx={{ position: "relative", zIndex: 2, px: { xs: 2, sm: 4, md: 8 } }}
-        >
+
+        {/* Carousel content */}
+        <Box sx={{ position: "relative", zIndex: 2 }}>
           <Swiper
             modules={[Autoplay]}
             spaceBetween={30}
@@ -146,139 +108,30 @@ function Example() {
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* <Typography fontWeight={"bold"} mt={2} variant="body1">
+          <Typography fontWeight={"bold"} mt={2} variant="body1">
             Mau liat hasil karya kami lainnya?
-          </Typography> */}
-          <img
-            src={mauLiat}
-            alt="Logo"
-            style={{ width: 250, maxWidth: "100%" }}
-          />
-          <Box display={"flex"} justifyContent={"center"}>
-            <a
-              href="https://wa.me/6281227137167" // Replace with your phone number
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
+          </Typography>
+          <a
+            href="https://wa.me/6281227137167" // Replace with your phone number
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <IconButton
+              color="inherit"
+              sx={{
+                mt: 1,
+                backgroundColor: "#25D366",
+                "&:hover": { backgroundColor: "#1DA851" },
+                color: "#FFFFFF",
+              }}
             >
-              <IconButton
-                color="inherit"
-                sx={{
-                  mt: 1,
-                  backgroundColor: "#25D366",
-                  "&:hover": { backgroundColor: "#1DA851" },
-                  color: "#FFFFFF",
-                }}
-              >
-                <WhatsAppIcon />
-              </IconButton>
-            </a>
-          </Box>
+              <WhatsAppIcon />
+            </IconButton>
+          </a>
         </Box>
       </Box>
-    </Box>
-    //   <Container sx={{ py: 5, textAlign: "center" }}>
-    //     <Typography fontWeight="bold" variant="h4" gutterBottom>
-    //       Hasil Karya
-    //     </Typography>
-
-    //     <Box sx={{ position: "relative", height: "500px" }}>
-    //       {/* Background box on bottom half with extra wide padding.
-    //           Note: Only the bottom value is adjusted
-    //           to extend the background downward so that it covers the IconButton. */}
-    //       <Box
-    //         sx={{
-    //           position: "absolute",
-    //           top: "50%",
-    //           left: "-5%", // extend box to the left
-    //           right: "-5%", // extend box to the right
-    //           bottom: "-60px", // extend the background a bit lower so it covers the IconButton
-    //           backgroundColor: "#FF9539",
-    //           borderRadius: 4,
-    //           px: 10,
-    //           pb: 6,
-    //           zIndex: 1,
-    //         }}
-    //       />
-
-    //       {/* Carousel content */}
-    // <Box sx={{ position: "relative", zIndex: 2 }}>
-    //   <Swiper
-    //     modules={[Autoplay]}
-    //     spaceBetween={30}
-    //     slidesPerView={1}
-    //     loop={true}
-    //     autoplay={{
-    //       delay: 3000,
-    //       disableOnInteraction: false,
-    //     }}
-    //     breakpoints={{
-    //       600: { slidesPerView: 2 },
-    //       900: { slidesPerView: 3 },
-    //       1200: { slidesPerView: 4 },
-    //     }}
-    //   >
-    //     {slides.map((img, index) => (
-    //       <SwiperSlide
-    //         key={index}
-    //         style={{
-    //           overflow: "visible",
-    //           position: "relative",
-    //         }}
-    //       >
-    //         <Box sx={{ position: "relative", overflow: "visible" }}>
-    //           <img
-    //             src={img}
-    //             style={{
-    //               height: "450px",
-    //               width: "100%",
-    //               objectFit: "contain",
-    //               borderRadius: "20px",
-    //             }}
-    //             alt={`Example ${index + 1}`}
-    //           />
-
-    //           {/* Always render the arrow icon for each slide */}
-    //           <ArrowForwardIosRoundedIcon
-    //             sx={{
-    //               position: "absolute",
-    //               // Place the icon so its center falls roughly 15px beyond the slide’s right edge.
-    //               left: "calc(100% + 3px)",
-    //               top: "50%",
-    //               transform: "translateY(-50%)",
-    //               zIndex: 10,
-    //               fontSize: "24px",
-    //               color: "black",
-    //             }}
-    //           />
-    //         </Box>
-    //       </SwiperSlide>
-    //     ))}
-    //   </Swiper>
-    //   <Typography fontWeight={"bold"} mt={2} variant="body1">
-    //     Mau liat hasil karya kami lainnya?
-    //   </Typography>
-    //   <a
-    //     href="https://wa.me/6281227137167" // Replace with your phone number
-    //     target="_blank"
-    //     rel="noopener noreferrer"
-    //     style={{ textDecoration: "none" }}
-    //   >
-    //     <IconButton
-    //       color="inherit"
-    //       sx={{
-    //         mt: 1,
-    //         backgroundColor: "#25D366",
-    //         "&:hover": { backgroundColor: "#1DA851" },
-    //         color: "#FFFFFF",
-    //       }}
-    //     >
-    //       <WhatsAppIcon />
-    //     </IconButton>
-    //   </a>
-    // </Box>
-    //     </Box>
-    //   </Container>
+    </Container>
   );
 }
 

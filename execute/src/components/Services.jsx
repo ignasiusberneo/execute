@@ -1,105 +1,322 @@
-import { Box, Container, Typography, IconButton } from "@mui/material";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import backgroundFirstCard from "../assets/backgroundFirstCard.png";
-import backgroundSecondCard from "../assets/backgroundSecondCard.png";
-import firstCard from "../assets/firstCard.svg";
-import secondCard from "../assets/secondCard.svg";
+import {
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  Button,
+  Box,
+  IconButton,
+} from "@mui/material";
+import { motion } from "framer-motion";
+import CircleIcon from "@mui/icons-material/Circle";
+import serviceList from "../assets/serviceList";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 function Services() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  return (
-      <Box
-        sx={{
-          position: "relative",
-          width: "100%",
-          display: "inline-block", // Let height follow content
-          textAlign: "center",
-          py: 5, // ← Adds vertical padding around logo (adjust as needed)
-          mt: 2
-        }}
-      >
-        {/* Background image behind everything */}
-        <Box
-          component="img"
-          src={ backgroundFirstCard}
-          alt="Background"
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "fill", // or "contain" to avoid distortion
-            zIndex: -1,
-          }}
-        />
-  
-        {/* Foreground logo */}
-        <motion.div
-        ref={ref}
-        initial={{ opacity: 0, x: -100 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-          <img
-            src={firstCard}
-            alt="Logo"
-            style={{ width: 1000, maxWidth: "100%" }}
-          />
-        </motion.div>
+  // Define fixed dimensions for the card.
+  const cardWidth = "350px";
+  const cardHeightShort = "400px"; // Height for the first 3 short cards
+  const cardHeightLong = "500px"; // Height for the last 2 longer cards
 
-        {/* Background image behind everything */}
-        <Box
-          component="img"
-          src={ backgroundSecondCard}
-          alt="Background"
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "fill", // or "contain" to avoid distortion
-            zIndex: -1,
-          }}
-        />
-  
-        {/* Foreground logo */}
-        <motion.div
-        ref={ref}
-        initial={{ opacity: 0, x: 100 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 1, ease: "easeOut" }}
+  // Split the serviceList into two arrays: first 3 and last 2
+  const firstThreeServices = serviceList.slice(0, 3);
+  const lastTwoServices = serviceList.slice(3);
+
+  return (
+    <Container sx={{ py: 5 }}>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        textAlign="center"
+        gap={1}
       >
-          <img
-            src={secondCard}
-            alt="Logo"
-            style={{ width: 1000, maxWidth: "100%" }}
-          />
-        </motion.div>
-        <a
-            href="https://wa.me/6281227137167" // Replace with your phone number
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none" }}
-          >
-            <IconButton
-              color="inherit"
+        <Typography fontWeight={"bold"} variant="h4" gutterBottom>
+          Produk
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: 3,
+          }}
+        >
+          {/* First 3 cards (short) */}
+          {firstThreeServices.map((service, index) => (
+            <Box
+              key={index}
               sx={{
-                mt: 1,
-                backgroundColor: "#25D366",
-                "&:hover": { backgroundColor: "#1DA851" },
-                color: "#FFFFFF",
+                flex: "1 1 100%",
+                maxWidth: "100%",
+                "@media (min-width: 1200px)": {
+                  flex: "1 1 calc(33.333% - 24px)", // 3 items per row, accounting for gap
+                  maxWidth: "calc(33.333% - 24px)",
+                },
+                display: "flex",
+                justifyContent: "center",
               }}
             >
-              <WhatsAppIcon />
-            </IconButton>
-          </a>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                style={{ width: cardWidth, height: cardHeightShort }}
+              >
+                {/* Wrapper for Card and its frame with fixed height */}
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: cardWidth,
+                    height: cardHeightShort,
+                    overflow: "visible",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <Card
+                    sx={{
+                      backgroundColor: "#FE3500", // Gray background for first 3 cards
+                      display: "flex",
+                      flexDirection: "column",
+                      position: "relative",
+                      boxShadow: "none",
+                      padding: 0,
+                      overflow: "visible",
+                      width: cardWidth,
+                      height: "100%",
+                    }}
+                  >
+                    <CardContent
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        textAlign: "center",
+                        padding: "16px",
+                        flexGrow: 1,
+                        color: "#FFFFFF",
+                      }}
+                    >
+                      {/* Service Title with White Background */}
+                      <Typography
+                        sx={{
+                          mb: 2,
+                          backgroundColor: "#FFFFFF", // White background for title
+                          color: "#404040", // Font color matching the card background
+                          padding: "4px 8px", // Adding some padding for better readability
+                          borderRadius: "4px", // Optional: Round corners for the title
+                          boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)",
+                        }}
+                        variant="h6"
+                      >
+                        {service.title}
+                      </Typography>
+                      <Box mb={2}>
+                        <Typography sx={{ fontWeight: "bold" }}>
+                          {service.description}
+                        </Typography>
+                        <Typography sx={{ fontWeight: "bold" }}>
+                          {service.description2}
+                        </Typography>
+                      </Box>
+                      {service.detail.map((detail, idx) => (
+                        <Typography key={idx}>
+                          <CircleIcon sx={{ fontSize: 10, mr: 1 }} />
+                          {detail}
+                        </Typography>
+                      ))}
+                      <Box sx={{ flexGrow: 1 }} />
+                      <a
+                        href="https://wa.me/6281227137167" // Replace with your phone number
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <IconButton
+                          color="inherit"
+                          sx={{
+                            mt: 2,
+                            backgroundColor: "#25D366",
+                            "&:hover": { backgroundColor: "#1DA851" },
+                            color: "#FFFFFF",
+                          }}
+                        >
+                          <WhatsAppIcon />
+                        </IconButton>
+                      </a>
+                    </CardContent>
+                  </Card>
+
+                  {/* Frame elements */}
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: "-10px",
+                      width: "10px",
+                      height: "70%",
+                      bgcolor: "#FDD121",
+                      zIndex: 3,
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      bottom: "-10px",
+                      left: "-10px",
+                      width: "calc(75% + 10px)",
+                      height: "10px",
+                      bgcolor: "#FDD121",
+                      zIndex: 3,
+                    }}
+                  />
+                </Box>
+              </motion.div>
+            </Box>
+          ))}
+
+          {/* Last 2 cards (long) with different background color */}
+          {lastTwoServices.map((service, index) => (
+            <Box
+              key={index}
+              sx={{
+                flex: "1 1 100%",
+                maxWidth: "100%",
+                "@media (min-width: 1200px)": {
+                  flex: "1 1 calc(33.333% - 24px)", // 3 items per row, accounting for gap
+                  maxWidth: "calc(33.333% - 24px)",
+                },
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                style={{ width: cardWidth, height: cardHeightLong }}
+              >
+                {/* Wrapper for Card and its frame with fixed height */}
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: cardWidth,
+                    height: cardHeightLong,
+                    overflow: "visible",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <Card
+                    sx={{
+                      backgroundColor: "#FDD121", // Blue background for last 2 cards
+                      display: "flex",
+                      flexDirection: "column",
+                      position: "relative",
+                      boxShadow: "none",
+                      padding: 0,
+                      overflow: "visible",
+                      width: cardWidth,
+                      height: "100%",
+                    }}
+                  >
+                    <CardContent
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        textAlign: "center",
+                        padding: "16px",
+                        flexGrow: 1,
+                        // color: "#FFFFFF",
+                      }}
+                    >
+                      {/* Service Title with White Background */}
+                      <Typography
+                        sx={{
+                          mb: 2,
+                          backgroundColor: "#FFFFFF", // White background for title
+                          color: "#404040", // Font color matching the card background
+                          padding: "4px 8px",
+                          borderRadius: "4px",
+                          boxShadow: "0px 8px 16px rgba(255, 255, 255, 0.2)",
+                        }}
+                        variant="h6"
+                      >
+                        {service.title}
+                      </Typography>
+
+                      <Box mb={2}>
+                        <Typography sx={{ fontWeight: "bold" }}>
+                          {service.description}
+                        </Typography>
+                        <Typography sx={{ fontWeight: "bold" }}>
+                          {service.description2}
+                        </Typography>
+                      </Box>
+                      {service.detail.map((detail, idx) => (
+                        <Typography key={idx}>
+                          <CircleIcon sx={{ fontSize: 10, mr: 1 }} />
+                          {detail}
+                        </Typography>
+                      ))}
+                      <Box sx={{ flexGrow: 1 }} />
+                      <a
+                        href="https://wa.me/6281227137167" // Replace with your phone number
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <IconButton
+                          color="inherit"
+                          sx={{
+                            mt: 2,
+                            backgroundColor: "#25D366",
+                            "&:hover": { backgroundColor: "#1DA851" },
+                            color: "#FFFFFF",
+                          }}
+                        >
+                          <WhatsAppIcon />
+                        </IconButton>
+                      </a>
+                    </CardContent>
+                  </Card>
+
+                  {/* Frame elements */}
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: "-10px",
+                      width: "10px",
+                      height: "70%",
+                      bgcolor: "#FE3500",
+                      zIndex: 3,
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      bottom: "-10px",
+                      left: "-10px",
+                      width: "calc(75% + 10px)",
+                      height: "10px",
+                      bgcolor: "#FE3500",
+                      zIndex: 3,
+                    }}
+                  />
+                </Box>
+              </motion.div>
+            </Box>
+          ))}
+        </Box>
       </Box>
-    );
+    </Container>
+  );
 }
 
 export default Services;
