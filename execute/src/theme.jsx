@@ -3,7 +3,7 @@ import '@fontsource/montserrat'; // Make sure it's installed
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Montserrat, sans-serif',
+    fontFamily: "'Roboto', sans-serif",
   },
   // You can customize palette, components, spacing, etc. here too
 });

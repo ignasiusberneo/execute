@@ -46,7 +46,7 @@ function Testimonials() {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
-                  backgroundColor: "#8D0000",
+                  backgroundColor: "#FE3500",
                 }}
               >
                 <CardContent sx={{ flexGrow: 1 }}>

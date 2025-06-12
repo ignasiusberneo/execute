@@ -5,7 +5,7 @@ import { SiTiktok, SiInstagram } from "react-icons/si";
 
 function Footer() {
   return (
-    <Box bgcolor="#8D0000" py={5} mt={5}>
+    <Box bgcolor="#FE3500" py={5} mt={5}>
       <Container>
         <Grid
           container

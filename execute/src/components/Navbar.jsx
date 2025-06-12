@@ -10,6 +10,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import executeLogoOnly from "../assets/executeLogoOnly.png";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
 
 function Navbar({ onNavClick }) {
@@ -40,11 +41,12 @@ function Navbar({ onNavClick }) {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "white", boxShadow: "none" }}
+      sx={{ backgroundColor: "white", boxShadow: "none", px: 4 }}
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Left: Logo + Social */}
         <Box display="flex" alignItems="center" gap={1}>
+          <img src={executeLogoOnly} alt="Logo" style={{ width: 30 }} />
           <Typography variant="h6" component="div" color="black">
             Execute
           </Typography>
@@ -66,6 +68,13 @@ function Navbar({ onNavClick }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleSocialClose}
+                sx={{
+                  color: "black",
+                  "&:hover": {
+                    backgroundColor: "#FE3500", // or any color you want
+                    color: "white",
+                  },
+                }}
               >
                 Instagram
               </MenuItem>
@@ -75,6 +84,13 @@ function Navbar({ onNavClick }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleSocialClose}
+                sx={{
+                  color: "black",
+                  "&:hover": {
+                    backgroundColor: "#FE3500", // or any color you want
+                    color: "white",
+                  },
+                }}
               >
                 TikTok
               </MenuItem>
@@ -84,19 +100,64 @@ function Navbar({ onNavClick }) {
 
         {/* Desktop Nav */}
         <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
-          <Button onClick={onNavClick.tentangKami} sx={{ color: "black" }}>
+          <Button
+            onClick={onNavClick.tentangKami}
+            sx={{
+              color: "black",
+              "&:hover": {
+                backgroundColor: "#FE3500", // or any color you want,
+                color: "white",
+              },
+            }}
+          >
             Tentang Kami
           </Button>
-          <Button onClick={onNavClick.produk} sx={{ color: "black" }}>
+          <Button
+            onClick={onNavClick.produk}
+            sx={{
+              color: "black",
+              "&:hover": {
+                backgroundColor: "#FE3500", // or any color you want,
+                color: "white",
+              },
+            }}
+          >
             Produk
           </Button>
-          <Button onClick={onNavClick.hasilKarya} sx={{ color: "black" }}>
+          <Button
+            onClick={onNavClick.hasilKarya}
+            sx={{
+              color: "black",
+              "&:hover": {
+                backgroundColor: "#FE3500", // or any color you want,
+                color: "white",
+              },
+            }}
+          >
             Hasil Karya
           </Button>
-          <Button onClick={onNavClick.kenapaHarusKami} sx={{ color: "black" }}>
+          <Button
+            onClick={onNavClick.kenapaHarusKami}
+            sx={{
+              color: "black",
+              "&:hover": {
+                backgroundColor: "#FE3500", // or any color you want,
+                color: "white",
+              },
+            }}
+          >
             Kenapa Harus Kami
           </Button>
-          <Button onClick={onNavClick.kontak} sx={{ color: "black" }}>
+          <Button
+            onClick={onNavClick.kontak}
+            sx={{
+              color: "black",
+              "&:hover": {
+                backgroundColor: "#FE3500", // or any color you want,
+                color: "white",
+              },
+            }}
+          >
             Kontak
           </Button>
         </Box>

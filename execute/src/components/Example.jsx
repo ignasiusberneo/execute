@@ -46,7 +46,7 @@ function Example() {
             left: "-5%", // extend box to the left
             right: "-5%", // extend box to the right
             bottom: "-60px", // extend the background a bit lower so it covers the IconButton
-            backgroundColor: "#FF9539",
+            backgroundColor: "#FDD121",
             borderRadius: 4,
             px: 10,
             pb: 6,

@@ -1,25 +1,20 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import logo from "../assets/logo.png";
-import logo2 from "../assets/logo2.png";
-import executeNewLogo from "../assets/executeNewLogo.JPG";
-import executeLogo from "../assets/executeLogo.PNG";
-import heroBackground2 from "../assets/heroBackground2.jpg";
+import heroIcon from "../assets/heroIcon.png";
 
 function Hero() {
   return (
     <Box
       textAlign="center"
-      py={8}
       // bgcolor={"#FC8F00"}
       sx={{
         // backgroundImage: "url(/heroBackground2.jpg)", // Replace with your image path
         // backgroundSize: "cover",
         // backgroundPosition: "center",
         // backgroundRepeat: "no-repeat",
-        background: "linear-gradient(135deg, 	#FFFFFF, #FF9539 )", // <-- Gradient
+        background: "#FE3500", // <-- Gradient
         width: "100%",
-        py: 10, // Adds top & bottom padding
+        // py: 10, // Adds top & bottom padding
         px: 2,
         color: "white",
         // textAlign: "center",
@@ -30,10 +25,51 @@ function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <img src={executeLogo} alt="Logo" style={{ width: 250 }} />
-        {/* <Typography variant="h6" mt={5} color="white">
-          Turning Vision Into Action
-        </Typography> */}
+        <Box display="flex" mx={5} gap={5} alignItems="center">
+          <Box
+            display="flex"
+            flexDirection="column"
+            mb={4}
+            justifyContent={"center"}
+          >
+            <Typography
+              sx={{ fontWeight: "bold", fontSize: "2.5rem" }}
+              textAlign={"left"}
+              color="white"
+            >
+              Jasa Pembuatan Video Kreatif
+            </Typography>
+            <Typography
+              sx={{ fontWeight: "bold", fontSize: "2.5rem" }}
+              textAlign={"left"}
+              color="white"
+            >
+              untuk TikTok & Instagram
+            </Typography>
+            <Typography
+              sx={{ fontSize: "1rem" }}
+              textAlign={"left"}
+              color="white"
+            >
+              Hasil Maksimal, Effort Minimal!
+            </Typography>
+            <Button
+             onClick={() => window.open("https://wa.me/6281227137167", "_blank")}
+              sx={{
+                alignSelf: "flex-start", // aligns the button to the left inside the column
+                width: "fit-content", // prevents it from stretching
+                mt: 2,
+                backgroundColor: "#25D366",
+                color: "white",
+                fontWeight: "bold",
+              }}
+              variant="contained"
+            >
+              Konsultasi
+            </Button>
+          </Box>
+          <img src={heroIcon} alt="Logo" style={{ width: 550 }} />
+        </Box>
       </motion.div>
     </Box>
   );

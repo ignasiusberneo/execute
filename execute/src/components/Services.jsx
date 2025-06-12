@@ -78,7 +78,7 @@ function Services() {
                 >
                   <Card
                     sx={{
-                      backgroundColor: "#FF9539", // Gray background for first 3 cards
+                      backgroundColor: "#FE3500", // Gray background for first 3 cards
                       display: "flex",
                       flexDirection: "column",
                       position: "relative",
@@ -97,7 +97,7 @@ function Services() {
                         textAlign: "center",
                         padding: "16px",
                         flexGrow: 1,
-                        // color: "#FFFFFF",
+                        color: "#FFFFFF",
                       }}
                     >
                       {/* Service Title with White Background */}
@@ -158,7 +158,7 @@ function Services() {
                       left: "-10px",
                       width: "10px",
                       height: "70%",
-                      bgcolor: "#8D0000",
+                      bgcolor: "#FDD121",
                       zIndex: 3,
                     }}
                   />
@@ -169,7 +169,7 @@ function Services() {
                       left: "-10px",
                       width: "calc(75% + 10px)",
                       height: "10px",
-                      bgcolor: "#8D0000",
+                      bgcolor: "#FDD121",
                       zIndex: 3,
                     }}
                   />
@@ -213,7 +213,7 @@ function Services() {
                 >
                   <Card
                     sx={{
-                      backgroundColor: "#8D0000", // Blue background for last 2 cards
+                      backgroundColor: "#FDD121", // Blue background for last 2 cards
                       display: "flex",
                       flexDirection: "column",
                       position: "relative",
@@ -232,7 +232,7 @@ function Services() {
                         textAlign: "center",
                         padding: "16px",
                         flexGrow: 1,
-                        color: "#FFFFFF",
+                        // color: "#FFFFFF",
                       }}
                     >
                       {/* Service Title with White Background */}
@@ -294,7 +294,7 @@ function Services() {
                       left: "-10px",
                       width: "10px",
                       height: "70%",
-                      bgcolor: "#FF9539",
+                      bgcolor: "#FE3500",
                       zIndex: 3,
                     }}
                   />
@@ -305,7 +305,7 @@ function Services() {
                       left: "-10px",
                       width: "calc(75% + 10px)",
                       height: "10px",
-                      bgcolor: "#FF9539",
+                      bgcolor: "#FE3500",
                       zIndex: 3,
                     }}
                   />
