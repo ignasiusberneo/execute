@@ -25,14 +25,14 @@ function Skills() {
         py={5}
       >
         <Box
-                  component="img"
-                  src={element2}
-                  alt="Logo"
-                  sx={{
-                    width: 400,
-                    display: { xs: "none", md: "block" },
-                  }}
-                />
+          component="img"
+          src={element2}
+          alt="Logo"
+          sx={{
+            width: 400,
+            display: { xs: "none", md: "block" },
+          }}
+        />
 
         <Box
           sx={{
@@ -59,14 +59,13 @@ function Skills() {
 
           <Box
             display="flex"
-            flexDirection="row"
+            flexDirection={{ xs: "column", sm: "row" }}
             justifyContent="space-between"
             gap={4}
             mt={2}
             width="100%"
             sx={{
-              flexWrap: "nowrap",
-              overflowX: "auto",
+              flexWrap: "wrap", // wrap on small screens
             }}
           >
             {/* Left Column */}
