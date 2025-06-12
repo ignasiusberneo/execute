@@ -68,7 +68,15 @@ function Hero() {
               Konsultasi
             </Button>
           </Box>
-          <img src={heroIcon} alt="Logo" style={{ width: 550 }} />
+          <Box
+                    component="img"
+                    src={heroIcon}
+                    alt="Logo"
+                    sx={{
+                      width: 550,
+                      display: { xs: "none", md: "block" },
+                    }}
+                  />
         </Box>
       </motion.div>
     </Box>

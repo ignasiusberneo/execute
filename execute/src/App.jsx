@@ -46,7 +46,7 @@ function App() {
         <Example />
       </div>
       <Testimonials />
-      <OurClient />
+      {/* <OurClient /> */}
       <div ref={kenapaHarusKamiRef}>
         <WhyChooseUs />
       </div>
