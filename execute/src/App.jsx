@@ -10,6 +10,7 @@ import Example from "./components/Example";
 import { Box } from "@mui/material";
 import Navbar from "./components/Navbar";
 import { useRef } from "react";
+import OurClient from "./components/OurClient";
 
 function App() {
   const tentangKamiRef = useRef(null);
@@ -45,6 +46,7 @@ function App() {
         <Example />
       </div>
       <Testimonials />
+      <OurClient />
       <div ref={kenapaHarusKamiRef}>
         <WhyChooseUs />
       </div>
