@@ -54,7 +54,9 @@ function Hero() {
               Hasil Maksimal, Effort Minimal!
             </Typography>
             <Button
-             onClick={() => window.open("https://wa.me/6281227137167", "_blank")}
+              onClick={() =>
+                window.open("https://wa.me/6281227137167", "_blank")
+              }
               sx={{
                 alignSelf: "flex-start", // aligns the button to the left inside the column
                 width: "fit-content", // prevents it from stretching
@@ -69,14 +71,14 @@ function Hero() {
             </Button>
           </Box>
           <Box
-                    component="img"
-                    src={heroIcon}
-                    alt="Logo"
-                    sx={{
-                      width: 550,
-                      display: { xs: "none", md: "block" },
-                    }}
-                  />
+            component="img"
+            src={heroIcon}
+            alt="Logo"
+            sx={{
+              width: 550,
+              display: { xs: "none", md: "block" },
+            }}
+          />
         </Box>
       </motion.div>
     </Box>

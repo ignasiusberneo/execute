@@ -29,7 +29,7 @@ function Services() {
         textAlign="center"
         gap={1}
       >
-        <Typography fontWeight="bold" variant="h4" gutterBottom>
+        <Typography fontWeight="bold" variant="h4" gutterBottom mb={5}>
           Produk
         </Typography>
         <Box

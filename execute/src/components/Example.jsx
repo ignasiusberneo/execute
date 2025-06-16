@@ -31,7 +31,7 @@ function Example() {
 
   return (
     <Container sx={{ py: 5, textAlign: "center" }}>
-      <Typography fontWeight="bold" variant="h4" gutterBottom>
+      <Typography fontWeight="bold" variant="h4" gutterBottom mb={5}>
         Hasil Karya
       </Typography>
 

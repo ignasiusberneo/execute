@@ -16,7 +16,7 @@ function App() {
   const tentangKamiRef = useRef(null);
   const produkRef = useRef(null);
   const hasilKaryaRef = useRef(null);
-  const kenapaHarusKamiRef = useRef(null);
+  const klienKamiRef = useRef(null);
   const kontakRef = useRef(null);
 
   const scrollToSection = (ref) => {
@@ -30,7 +30,7 @@ function App() {
           tentangKami: () => scrollToSection(tentangKamiRef),
           produk: () => scrollToSection(produkRef),
           hasilKarya: () => scrollToSection(hasilKaryaRef),
-          kenapaHarusKami: () => scrollToSection(kenapaHarusKamiRef),
+          klienKami: () => scrollToSection(klienKamiRef),
           kontak: () => scrollToSection(kontakRef),
         }}
       />
@@ -46,10 +46,10 @@ function App() {
         <Example />
       </div>
       <Testimonials />
-      {/* <OurClient /> */}
-      <div ref={kenapaHarusKamiRef}>
-        <WhyChooseUs />
+      <div ref={klienKamiRef}>
+        <OurClient />
       </div>
+      <WhyChooseUs />
       <div ref={kontakRef}>
         <Footer />
       </div>

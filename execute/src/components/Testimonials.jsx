@@ -7,8 +7,8 @@ import testimonialList from "../assets/testimonialList";
 
 function Testimonials() {
   return (
-    <Container sx={{ py: 5, textAlign: "center" }}>
-      <Typography fontWeight={"bold"} variant="h4" gutterBottom>
+    <Container sx={{ py: 10, textAlign: "center" }}>
+      <Typography fontWeight={"bold"} variant="h4" gutterBottom mb={5}>
         Testimoni Pelanggan
       </Typography>
       <Swiper

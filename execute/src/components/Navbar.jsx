@@ -137,7 +137,7 @@ function Navbar({ onNavClick }) {
             Hasil Karya
           </Button>
           <Button
-            onClick={onNavClick.kenapaHarusKami}
+            onClick={onNavClick.klienKami}
             sx={{
               color: "black",
               "&:hover": {
@@ -146,7 +146,7 @@ function Navbar({ onNavClick }) {
               },
             }}
           >
-            Kenapa Harus Kami
+            Klien Kami
           </Button>
           <Button
             onClick={onNavClick.kontak}
@@ -187,7 +187,7 @@ function Navbar({ onNavClick }) {
             Hasil Karya
           </MenuItem>
           <MenuItem onClick={() => handleNavClick(onNavClick.kenapaHarusKami)}>
-            Kenapa Harus Kami
+            Klien Kami
           </MenuItem>
           <MenuItem onClick={() => handleNavClick(onNavClick.kontak)}>
             Kontak
