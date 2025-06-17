@@ -39,10 +39,8 @@ function Navbar({ onNavClick }) {
   };
 
   return (
-    <AppBar
-      position="static"
-      sx={{ backgroundColor: "white", boxShadow: "none", px: 4 }}
-    >
+    <AppBar position="sticky" sx={{ backgroundColor: "white", boxShadow: "none", px: 4, top: 0, zIndex: 1100 }}>
+
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Left: Logo + Social */}
         <Box display="flex" alignItems="center" gap={1}>
@@ -71,7 +69,7 @@ function Navbar({ onNavClick }) {
                 sx={{
                   color: "black",
                   "&:hover": {
-                    backgroundColor: "#FE3500", // or any color you want
+                    backgroundColor: "#DC2525", // or any color you want
                     color: "white",
                   },
                 }}
@@ -87,7 +85,7 @@ function Navbar({ onNavClick }) {
                 sx={{
                   color: "black",
                   "&:hover": {
-                    backgroundColor: "#FE3500", // or any color you want
+                    backgroundColor: "#DC2525", // or any color you want
                     color: "white",
                   },
                 }}
@@ -105,7 +103,7 @@ function Navbar({ onNavClick }) {
             sx={{
               color: "black",
               "&:hover": {
-                backgroundColor: "#FE3500", // or any color you want,
+                backgroundColor: "#DC2525", // or any color you want,
                 color: "white",
               },
             }}
@@ -117,7 +115,7 @@ function Navbar({ onNavClick }) {
             sx={{
               color: "black",
               "&:hover": {
-                backgroundColor: "#FE3500", // or any color you want,
+                backgroundColor: "#DC2525", // or any color you want,
                 color: "white",
               },
             }}
@@ -129,7 +127,7 @@ function Navbar({ onNavClick }) {
             sx={{
               color: "black",
               "&:hover": {
-                backgroundColor: "#FE3500", // or any color you want,
+                backgroundColor: "#DC2525", // or any color you want,
                 color: "white",
               },
             }}
@@ -141,7 +139,7 @@ function Navbar({ onNavClick }) {
             sx={{
               color: "black",
               "&:hover": {
-                backgroundColor: "#FE3500", // or any color you want,
+                backgroundColor: "#DC2525", // or any color you want,
                 color: "white",
               },
             }}
@@ -153,7 +151,7 @@ function Navbar({ onNavClick }) {
             sx={{
               color: "black",
               "&:hover": {
-                backgroundColor: "#FE3500", // or any color you want,
+                backgroundColor: "#DC2525", // or any color you want,
                 color: "white",
               },
             }}

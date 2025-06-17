@@ -12,7 +12,7 @@ function Hero() {
         // backgroundSize: "cover",
         // backgroundPosition: "center",
         // backgroundRepeat: "no-repeat",
-        background: "#FE3500", // <-- Gradient
+        background: "#DC2525", // <-- Gradient
         width: "100%",
         // py: 10, // Adds top & bottom padding
         px: 2,

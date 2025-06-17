@@ -34,7 +34,7 @@ function WhyChooseUs() {
           sx={{
             py: 5,
             px: 2,
-            backgroundColor: "#FDD121",
+            backgroundColor: "#FBA518",
             borderRadius: "30px",
             maxWidth: "800px",
             mx: "auto",

@@ -43,8 +43,8 @@ function Services() {
           {[...firstThreeServices, ...lastTwoServices].map((service, index) => {
             const isLong = index >= 3;
             const cardHeight = isLong ? cardHeightLong : cardHeightShort;
-            const borderColor = isLong ? "#FE3500" : "#FDD121";
-            const bgColor = isLong ? "#FDD121" : "#FE3500";
+            const borderColor = isLong ? "#DC2525" : "#FBA518";
+            const bgColor = isLong ? "#FBA518" : "#DC2525";
             const textColor = isLong ? "#000000" : "#FFFFFF";
 
             return (
