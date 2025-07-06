@@ -13,6 +13,7 @@ import logoNutrivo from "../assets/logoNutrivo.png";
 import logoElvicto from "../assets/logoElvicto.png";
 import logoNutrifarm from "../assets/logoNutrifarm.png";
 import logoSusufirnezku from "../assets/logoSusufirnezku.png";
+import logoSlondokMamah from "../assets/logoSlondokMamah.png";
 
 function OurClient() {
   const logos = [
@@ -27,6 +28,7 @@ function OurClient() {
     logoElvicto,
     logoNutrifarm,
     logoSusufirnezku,
+    logoSlondokMamah
   ];
 
   return (

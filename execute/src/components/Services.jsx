@@ -17,8 +17,8 @@ function Services() {
   const cardHeightShort = "400px";
   const cardHeightLong = "500px";
 
-  const firstThreeServices = serviceList.slice(0, 3);
-  const lastTwoServices = serviceList.slice(3);
+  const firstThreeServices = serviceList.slice(0, 2);
+  const lastTwoServices = serviceList.slice(2);
 
   return (
     <Container sx={{ py: 5 }}>
@@ -41,7 +41,7 @@ function Services() {
           }}
         >
           {[...firstThreeServices, ...lastTwoServices].map((service, index) => {
-            const isLong = index >= 3;
+            const isLong = index >= 2;
             const cardHeight = isLong ? cardHeightLong : cardHeightShort;
             const borderColor = isLong ? "#DC2525" : "#FBA518";
             const bgColor = isLong ? "#FBA518" : "#DC2525";
@@ -53,7 +53,7 @@ function Services() {
                 sx={{
                   width: "100%", // Full width on all screens
                   "@media (min-width: 900px)": {
-                    width: "calc(33.333% - 24px)", // 3 columns on md+
+                    width: "calc(50% - 24px)", // 3 columns on md+
                   },
                   display: "flex",
                   justifyContent: "center",
