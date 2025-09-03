@@ -51,7 +51,7 @@ function Hero() {
               textAlign={"left"}
               color="white"
             >
-              Hasil Maksimal, Effort Minimal!
+              Hasil Nyata, No Drama!
             </Typography>
             <Button
               onClick={() =>
